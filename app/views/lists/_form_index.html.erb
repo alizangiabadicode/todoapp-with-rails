@@ -1,0 +1,19 @@
+<%= form_with(model: @list, local: true, url: "/lists", method: "post") do |form| %>
+
+
+  <div class="form-inline">
+    <!-- <%= form.label :description %><br/> -->
+    <%= form.text_field :description, id: :list_description, class: "form-control mr-sm-2", placeholder:"description" %>
+
+  <%
+=begin%>
+ <div class="field">
+    <%= form.label :completed %>
+    <%= form.check_box :completed, id: :list_completed %>
+  </div> 
+<%
+=end%>
+
+    <%= form.submit "Add to items", actions: 'create',  class: "btn btn-outline-success my-2 my-sm-0" %>
+  </div>
+<% end %>
